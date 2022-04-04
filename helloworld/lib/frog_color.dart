@@ -10,7 +10,7 @@ class FrogColor extends InheritedWidget {
   final Color color;
 
   static FrogColor of(BuildContext context) {
-    final FrogColor? result = context.dependOnInheritedWidgetOfExactType<FrogColor>();
+    final result = context.dependOnInheritedWidgetOfExactType<FrogColor>();
     assert(result != null, 'No FrogColor found in context');
     return result!;
   }
