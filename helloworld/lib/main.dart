@@ -71,17 +71,19 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return FrogColor(
-      color: Colors.green,
+      color: Colors.yellowAccent,
       child: Scaffold(
         appBar: AppBar(
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
-          title: Text(
-            widget.title,
-            style: TextStyle(
-              color: FrogColor.of(context).color,
-            ),
-          ),
+          title: Builder(builder: (innerContext) {
+            return Text(
+              widget.title,
+              style: TextStyle(
+                color: FrogColor.of(innerContext).color,
+              ),
+            );
+          }),
         ),
         body: Center(
           // Center is a layout widget. It takes a single child and positions it
